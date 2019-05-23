@@ -256,10 +256,15 @@ alert("Vui lòng điền mật khẩu");
 document.frmdangnhap.txtPasswordHDuy.focus();
 return false;
 }
- alert ("Đăng nhập thành công !!!");
-  window.location.href = "index.html";
- return true;
+if(document.frmdangnhap.txtUsernameHDuy.value=="1" && document.frmdangnhap.txtPasswordHDuy.value=="1"){
 
+
+
+ alert ("Đăng nhập thành công !!!");
+  window.location.href = "trangchu.html";
+
+ //return true;
+}
 }
 </script>
 
@@ -274,7 +279,7 @@ return false;
 <body>
 
 <div class="container">
-  <div class="header"><img src="img/banner4.jpg" width="1094" height="361" alt="" longdesc="index.html" />
+  <div class="header"><img src="img/banner4.jpg" width="1094" height="361" alt="" longdesc="trangchu.html" />
   <!-- end .header --></div>
   
     
@@ -285,7 +290,7 @@ return false;
     <h1>ĐĂNG NHẬP QUẢN TRỊ VIÊN</h1>
     
     
-     <form action="dangnhap.html" name="frmdangnhap" method="post" onSubmit="return checkform()">
+     <form action="trangchu.html" name="frmdangnhap" method="post" onSubmit="return checkform()">
    <!-- <table width="435" height="235" border="1" align="center">
       <tr>
         <td colspan="4" align="center">ĐĂNG NHẬP</td>
@@ -319,7 +324,7 @@ return false;
     
     <br />
     <div class="imgcontainer">
-    <img src="https://aksharachits.com/home/assets/images/login_img.png" alt="Avatar" class="avatar">
+   
   </div>
 
   <div class="container">

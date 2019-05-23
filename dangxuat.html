@@ -143,7 +143,9 @@ function kiemtra(){
 	
 	
 		function show(value){
+
 			alert(value+ " Thành công");
+			return true;
 		}
 
 
@@ -153,13 +155,13 @@ function kiemtra(){
 </head>
 
 <body>
-<form action="index.html" method="POST" enctype="multipart/form-data">
+<form action="dangxuat.html" method="POST" onSubmit="return show()" name="frmdangxuat" enctype="multipart/form-data">
 <div class="container">
-  <div class="header" align="center"><img src="img/banner4.jpg" width="1094" height="361" alt="" longdesc="index.html" />
+  <div class="header" align="center"><img src="img/banner4.jpg" width="1094" height="361" alt="" longdesc="trangchu.html" />
   <!-- end .header --></div>
   <div class="sidebar1">
     <ul class="nav">
-      <li><a href="index.html">TRANG CHỦ</a></li>
+      <li><a href="trangchu.html">TRANG CHỦ</a></li>
       <li><a href="sanpham.html">QUẢN LÝ SÁN PHẨM</a></li>
       <li><a href="khachhang.html">QUẢN LÝ KHÁCH HÀNG</a></li>
       <li><a href="nhanvien.html">QUẢN LÝ NHÂN VIÊN</a></li>
@@ -174,7 +176,7 @@ function kiemtra(){
     <form action="dangxuat.html" name="dangxuat" method="post" onSubmit="return kiemtra()">
 
     <input type="button" name="button1" value="Đăng xuất" size="20" onclick="show(this.form.button1.value)">
-   <a href="index.html"><input type="button" name="btnhuy" value="Hủy"/></a>
+   <a href="trangchu.html"><input type="button" name="btnhuy" value="Hủy"/></a>
   </div>
   <div class="footer" align="center">
     <p>TRANG QUẢN TRỊ - BÁO CÁO THIẾT KẾ WEBSITE<br/>CỬA HÀNG VĂN PHÒNG PHẨM NGUYỆT VY</p>
