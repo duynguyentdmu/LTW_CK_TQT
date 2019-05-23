@@ -51,7 +51,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 /* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
 .header {
-	background-color: #6F7D94;
+	background-color: #99FF33;
 }
 
 /* ~~ These are the columns for the layout. ~~ 
@@ -106,7 +106,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 /* ~~ The footer ~~ */
 .footer {
 	padding: 10px 0;
-	background-color: #6F7D94;
+	background-color: #99FF33;
 	position: relative;/* this gives IE6 hasLayout to properly clear */
 	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
 }
@@ -135,13 +135,9 @@ ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it ne
 <![endif]-->
 
 <script>
-function show(){
-var ht=window.document.dangnhap.txtdc.value;	
-	if(ht.length==0){
-alert("vui lòng nhập thông tin bài đăng");
-window.document.dangnhap.txtdc.focus();
-return false;
-}
+
+function show(value){
+			alert(value + " thành công");
 	}
 
 </script>
@@ -149,7 +145,7 @@ return false;
 </head>
 
 <body>
-<form action="trangchu.html" method="POST" enctype="multipart/form-data">
+<form action="trangchu.html" method="POST" name="trangchu" onSubmit="return show()" enctype="multipart/form-data">
 <div class="container">
   <div class="header" align="center"><img src="img/banner4.jpg" width="1094" height="361" alt="" longdesc="trangchu.html" />
   <!-- end .header --></div>
@@ -169,7 +165,7 @@ return false;
     <h1>TRANG CHỦ</h1>
 		<h2>QUẢN LÝ BÀI ĐĂNG TRANG CHỦ</h2>
 		
-		<h2><a href="../LTW_CK_TQT/webcuaduc/index.html">QUAY VỀ TRANG BÁN HÀNG</a></h2>
+		<h2><a href="webcuaduc/index.html">QUAY VỀ TRANG BÁN HÀNG</a></h2>
     <table>
     <tr>
     	<td>Hình ành: </td>
@@ -187,10 +183,10 @@ Hiện trạng thị trường hiện nay cho thấy, sản phẩm rời khỏi 
     </tr>
     <tr>
     	<td></td>
-        <td><input type="button" value="Lưu" name="btnkt" onmousedown="k" /></td>
+        <td><input type="button" name="button1" value="Lưu" size="20" onclick="show(this.form.button1.value)"></td>
     </tr>
     </table>
-   
+   </form>
    
    
    
@@ -203,6 +199,6 @@ Hiện trạng thị trường hiện nay cho thấy, sản phẩm rời khỏi 
     <p>TRANG QUẢN TRỊ - BÁO CÁO THIẾT KẾ WEBSITE<br/>CỬA HÀNG VĂN PHÒNG PHẨM NGUYỆT VY</p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
-  </form>
+
 </body>
 </html>

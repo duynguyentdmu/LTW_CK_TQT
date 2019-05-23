@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6, p {
 	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
 	padding-right: 15px;
 	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+	color: #000;
 }
 a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
 	border: none;
@@ -51,7 +52,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 /* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
 .header {
-	background-color: #6F7D94;
+	background-color: #99FF33;
 }
 
 /* ~~ These are the columns for the layout. ~~ 
@@ -106,7 +107,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 /* ~~ The footer ~~ */
 .footer {
 	padding: 10px 0;
-	background-color: #6F7D94;
+	background-color: #99FF33;
 	position: relative;/* this gives IE6 hasLayout to properly clear */
 	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
 }
@@ -126,13 +127,16 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	font-size: 1px;
 	line-height: 0px;
 }
+.container .content h1 {
+	color: #000;
+}
 -->
 </style><!--[if lte IE 7]>
 <style>
 .content { margin-right: -1px; } /* this 1px negative margin can be placed on any of the columns in this layout with the same corrective effect. */
 ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
 </style>
-<![endif]-->
+<!--[endif]-->
 <script  language="javascript" type="text/javascript">
 	
 function show(value){
@@ -164,25 +168,27 @@ function show(value){
    
    <form action="donhang.html" name="donhang" method="post" onSubmit="return show()"> 
    
-   <table width="609" border="1" align="center">
-  <tr>
+   <table width="609" border="0" align="center">
+  <tr style="background-color:#FF3; border-color:inherit">
     <td >STT</td>
     <td >MÃ ĐƠN HÀNG</td>
     <td >SẢN PHẨM</td>
+    <td >SỐ LƯỢNG</td>
     <td >TÊN KHÁCH HÀNG</td>
     <td >SĐT</td>
     <td >ĐỊA CHỈ GIAO HÀNG</td>
 	<td >THANH TOÁN</td>
     <td >THAO TÁC</td>
   </tr>
-  <tr>
+  <tr style="background-color:#FFC">
     <td>1</td>
     <td>HD01</td>
     <td>Bút Bi</td>
+    <td>1</td>
     <td>Nam</td>
     <td>0123456789</td>
     <td>15 Thuận An</td>
-   <td>250.000</td>
+   <td>5.000</td>
    
     <td><a href="chitietdonhang.html" ><input type="button" value="Chi tiết" class="button"></a>
       <input type="button" name="button1" value="Xóa" size="20" onclick="show(this.form.button1.value)"></td>
@@ -195,7 +201,7 @@ function show(value){
 
     <!-- end .content --></div>
   <div class="footer" align="center">
-    <p>TRANG QUẢN TRỊ - BÁO CÁO THIẾT KẾ WEBSITE<br/>CỬA HÀNG VĂN PHÒNG PHẨM NGUYỆT VY</p>
+    <p>TRANG QUẢN TRỊ - BÁO CÁO THIẾT KẾ WEBSITE<br/>CỬA HÀNG VĂN PHÒNG PHẨM NGUYỆT VY</p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
 </body>

@@ -51,7 +51,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 /* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
 .header {
-	background-color: #6F7D94;
+	background-color: #99FF33;
 }
 
 /* ~~ These are the columns for the layout. ~~ 
@@ -106,7 +106,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 /* ~~ The footer ~~ */
 .footer {
 	padding: 10px 0;
-	background-color: #6F7D94;
+	background-color: #99FF33;
 	position: relative;/* this gives IE6 hasLayout to properly clear */
 	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
 }
@@ -174,12 +174,18 @@ function kiemtra(){
 
     <!-- end .content -->
     <form action="dangxuat.html" name="dangxuat" method="post" onSubmit="return kiemtra()">
-
-    <input type="button" name="button1" value="Đăng xuất" size="20" onclick="show(this.form.button1.value)">
-   <a href="trangchu.html"><input type="button" name="btnhuy" value="Hủy"/></a>
+<table width="343" align="center">
+<tr>
+<td width="50"></td>
+<td width="74"><input type="button" name="button1" value="Đăng xuất" size="20" onclick="show(this.form.button1.value)">
+   <a href="trangchu.html"><input type="button" name="btnhuy" value="Hủy"/></a></td>
+<td width="6"></td>
+</tr>
+    
+   </table>
   </div>
   <div class="footer" align="center">
-    <p>TRANG QUẢN TRỊ - BÁO CÁO THIẾT KẾ WEBSITE<br/>CỬA HÀNG VĂN PHÒNG PHẨM NGUYỆT VY</p>
+    <p>TRANG QUẢN TRỊ - BÁO CÁO THIẾT KẾ WEBSITE<br/>CỬA HÀNG VĂN PHÒNG PHẨM NGUYỆT VY</p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
   </form>

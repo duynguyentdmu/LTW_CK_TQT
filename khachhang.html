@@ -51,7 +51,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 /* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
 .header {
-	background-color: #6F7D94;
+	background-color: #99FF33;
 }
 
 /* ~~ These are the columns for the layout. ~~ 
@@ -106,7 +106,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 /* ~~ The footer ~~ */
 .footer {
 	padding: 10px 0;
-	background-color: #6F7D94;
+	background-color: #99FF33;
 	position: relative;/* this gives IE6 hasLayout to properly clear */
 	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
 }
@@ -162,8 +162,8 @@ function show(value){
     <h1>QUẢN LÝ THÔNG TIN KHÁCH HÀNG</h1>
     <p><a href="dangkykhachhang.html">THÊM KHÁCH HÀNG MỚI</a>     </p>
      <form action="khachhang.html" name="khachhang" method="post" onSubmit="return show()"> 
-    <table width="624" border="1" align="center">
-      <tr>
+    <table width="624" border="0" align="center">
+      <tr style="background-color:#FF3; border-color:inherit">
     <td width="30">STT</td>
     <td width="104" >TÊN KHÁCH HÀNG</td>
     <td width="97" >TÀI KHOẢN</td>
@@ -174,7 +174,7 @@ function show(value){
     <td width="94" >SỞ THÍCH</td>
     <td width="116" >THAO TÁC</td>
       </tr>
-  <tr>
+  <tr style="background-color:#FFC">
     <td>1</td>
     <td>KHÁCH HÀNG 1</td>
     <td>khachhang1</td>
@@ -194,7 +194,7 @@ function show(value){
 </form>
     <!-- end .content --></div>
   <div class="footer" align="center">
-    <p>TRANG QUẢN TRỊ - BÁO CÁO THIẾT KẾ WEBSITE<br/>CỬA HÀNG VĂN PHÒNG PHẨM NGUYỆT VY</p>
+    <p>TRANG QUẢN TRỊ - BÁO CÁO THIẾT KẾ WEBSITE<br/>CỬA HÀNG VĂN PHÒNG PHẨM NGUYỆT VY</p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
 </body>
