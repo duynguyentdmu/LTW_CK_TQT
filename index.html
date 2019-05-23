@@ -133,69 +133,74 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
 </style>
 <![endif]-->
-<script  language="javascript" type="text/javascript">
-	
-function show(value){
-			alert(value + " thành công");
-		}
+
+<script>
+function show(){
+var ht=window.document.dangnhap.txtdc.value;	
+	if(ht.length==0){
+alert("vui lòng nhập thông tin bài đăng");
+window.document.dangnhap.txtdc.focus();
+return false;
+}
+	}
+
 </script>
 
 </head>
 
 <body>
-
+<form action="index.html" method="POST" enctype="multipart/form-data">
 <div class="container">
-  <div class="header" align="center"><img src="img/banner4.jpg" width="1029" height="361" alt="" longdesc="index.html" />
+  <div class="header" align="center"><img src="img/banner4.jpg" width="1094" height="361" alt="" longdesc="index.html" />
   <!-- end .header --></div>
   <div class="sidebar1">
     <ul class="nav">
-           <li><a href="index.html">TRANG CHỦ</a></li>
+       <li><a href="index.html">TRANG CHỦ</a></li>
       <li><a href="sanpham.html">QUẢN LÝ SÁN PHẨM</a></li>
       <li><a href="khachhang.html">QUẢN LÝ KHÁCH HÀNG</a></li>
       <li><a href="nhanvien.html">QUẢN LÝ NHÂN VIÊN</a></li>
        <li><a href="donhang.html">QUẢN LÝ ĐƠN HÀNG</a></li>
-      <li><a href="dangxuat.html">ĐĂNG XUẤT</a>   
+			<!-- <li><a href="dangnhap.html">ĐĂNG NHẬP</a>-->
+			 <li><a href="dangxuat.html">ĐĂNG XUẤT</a>	
+				<!-- end .sidebar1 --></li>
     </ul>
-    
-    <!-- end .sidebar1 --></div>
+  </div>
   <div class="content">
-    <h1>QUẢN LÝ THÔNG TIN KHÁCH HÀNG</h1>
-    <p><a href="dangkykhachhang.html">THÊM KHÁCH HÀNG MỚI</a>     </p>
-     <form action="khachhang.html" name="khachhang" method="post" onSubmit="return show()"> 
-    <table width="624" border="1" align="center">
-      <tr>
-    <td width="30">STT</td>
-    <td width="104" >TÊN KHÁCH HÀNG</td>
-    <td width="97" >TÀI KHOẢN</td>
-    <td width="72" >MẬT KHẨU</td>
-    <td width="65" >GIỚI TÍNH</td>
-    <td width="94" >NGÀY SINH</td>
-    <td width="94" >ĐỊA CHỈ</td>
-    <td width="94" >SỞ THÍCH</td>
-    <td width="116" >THAO TÁC</td>
-      </tr>
-  <tr>
-    <td>1</td>
-    <td>KHÁCH HÀNG 1</td>
-    <td>khachhang1</td>
-    <td>******</td>
-    <td>Nam</td>
-    <td>27/05/1997</td>
-    <td>15 Bình Dương</td>
-    <td>Không</td>
-   
-    <td><a href="chitietkhachhang.html" ><input type="button" value="Chi tiết khách hàng" class="button"></a>
-    <a href="suakhachhang.html" ><input type="button" value="Sửa" class="button"></a>
- <input type="button" name="button1" value="Xóa" size="20" onclick="show(this.form.button1.value)"></td>
-  </tr>
- 
-</table>
+    <h1>TRANG CHỦ</h1>
+    <h2>QUẢN LÝ BÀI ĐĂNG TRANG CHỦ</h2>
+    <table>
+    <tr>
+    	<td>Hình ành: </td>
+        <td><label for="file">Chọn Hình Ảnh:</label>
+		<input type="file" name="file1"/>
+		<input type="submit" value="Gửi!"/></td>
+    </tr>
+    <tr>
+    	<td>Bài Đăng: </td>
+        <td><textarea name="txtdc" style="height:200px; width:700px">Văn Phòng Phẩm Deli là một trong những nhà cung cấp lớn dạo trở lại đây
 
-</form>
-    <!-- end .content --></div>
+Những ai thường dùng văn phòng phẩm chắc hẳn đã biết đến chất lượng của thương hiệu Deli. Văn phòng phẩm Deli là một trong những nhà sản xuất văn phòng phẩm chất lượng cao, giá tốt nhất, hàng năm cung cấp một lượng hàng lớn cho thị trường Việt Nam. Tập đoàn Deli là nhà sản xuất văn phòng phẩm ở Trung Quốc. Công ty có 2 viện nghiên cứu, 5 khu công nghiệp lớn, 12 công ty con, hơn 60 chi nhánh và văn phòng đại diện. Với nhiều năm hoạt động công ty không ngừng cải tiến chất lượng và đã mẫu mã mới đến với người tiêu dùng..
+
+Hiện trạng thị trường hiện nay cho thấy, sản phẩm rời khỏi tay nhà sản xuất thì giá bán là chuyện …hên xui. Các nhà phân phối phá giá niêm yết hoặc đẩy giá cao lên làm mờ mắt người tiêu dùng. Ngoài ra, khách hàng không kiểm tra sản phẩm chính hãng còn rơi vào trường hợp mua phải hàng giá rẻ, chất lượng kém. Vì vậy giá cả của nhà cung cấp là một yếu tố rất quan trọng khi lựa chọn nhà cung cấp văn phòng phẩm Deli. Văn phòng phẩm HTP Toàn Cầu là nhà phân phối chính hãng văn phòng phẩm Deli tại Hà Nội. Với nhiều năm hợp tác với thương hiệu Deli chúng tôi luôn tuân thủ các yêu cầu về giá của hãng. Tiêu chí của chúng tôi là kinh doanh lâu bền nên tất cả sản phẩm của chúng tôi đều là sản phẩm chính hãng và giá cả tốt. Để hợp tác với chúng tôi bạn có thể liên hệ qua 0243.797.0592 hoặc 0984 907 850 để tìm hiểu về chính sách và nhận báo giá văn phòng phẩm Deli. Văn phòng phẩm HTP Toàn Cầu hy vọng sẽ đem đến sự hài lòng nhất cho khách hàng.</textarea></td>
+    </tr>
+    <tr>
+    	<td></td>
+        <td><input type="button" value="Lưu" name="btnkt" onmousedown="k" /></td>
+    </tr>
+    </table>
+   
+   
+   
+   
+   
+   
+   
+   
+  <!-- end .content --></div>
   <div class="footer" align="center">
-    <p>TRANG QUẢN TRỊ - BÁO CÁO THIẾT KẾ WEBSITE<br/>CỬA HÀNG VĂN PHÒNG PHẨM NGUYỆT VY</p>
+    <p>TRANG QUẢN TRỊ - BÁO CÁO THIẾT KẾ WEBSITE<br/>CỬA HÀNG VĂN PHÒNG PHẨM NGUYỆT VY</p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
+  </form>
 </body>
 </html>

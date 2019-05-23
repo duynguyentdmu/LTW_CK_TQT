@@ -132,58 +132,142 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 .content { margin-right: -1px; } /* this 1px negative margin can be placed on any of the columns in this layout with the same corrective effect. */
 ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
 </style>
-<![endif]--></head>
+<![endif]-->
+
+<script language="javascript">function kiemtra(){
+		var ht=window.document.themnhanvien.txthoten.value;
+		var tu=window.document.themnhanvien.txttu.value;
+		var sdt=window.document.themnhanvien.txtsdt.value;
+		var dc=window.document.themnhanvien.txtdc.value;
+		var hs=window.document.themnhanvien.txths.value;
+
+if(ht.length==0){
+alert("vui lòng nhập họ tên");
+window.document.themnhanvien.txthoten.focus();
+return false;
+}
+if(tu.length==0){
+alert("vui lòng nhập tuổi");
+window.document.themnhanvien.txttu.focus();
+return false;
+}
+if(isNaN(tu)==true){
+alert("Tuổi không phải là số");
+window.document.themnhanvien.tu.value="";
+document.themnhanvien.txttu.focus();
+return false;
+}
+if(sdt.length==0){
+alert("vui lòng nhập số điện thoại");
+window.document.themnhanvien.txtsdt.focus();
+return false;
+}
+if(dc.length==0){
+alert("vui lòng nhập địa chỉ");
+window.document.themnhanvien.txtdc.focus();
+return false;
+}
+if(hs.length==0){
+alert("vui lòng nhập hệ số lương");
+window.document.themnhanvien.txths.focus();
+return false;
+}
+if(isNaN(hs)==true){
+alert("hệ số nhập vào không phải là số");
+window.document.themnhanvien.hs.value="";
+document.themnhanvien.txths.focus();
+return false;
+}
+
+alert("Thêm nhân viên mới thành công");
+return true;
+}
+
+
+</script>
+
+
+</head>
 
 <body>
-<form action="trangchu.html" method="POST" enctype="multipart/form-data">
+
 <div class="container">
-  <div class="header"><img src="img/banner4.jpg" width="1029" height="361" alt="" longdesc="trangchu.html" />
+  <div class="header" align="center"><img src="img/banner4.jpg" width="1029" height="361" alt="" longdesc="index.html" />
   <!-- end .header --></div>
   <div class="sidebar1">
     <ul class="nav">
-       <li><a href="trangchu.html">TRANG CHỦ</a></li>
+       <li><a href="index.html">TRANG CHỦ</a></li>
       <li><a href="sanpham.html">QUẢN LÝ SÁN PHẨM</a></li>
       <li><a href="khachhang.html">QUẢN LÝ KHÁCH HÀNG</a></li>
-      <li><a href="#">QUẢN LÝ NHÂN VIÊN</a></li>
-      <li><a href="#">Link four</a>    <!-- end .sidebar1 --></li>
+      <li><a href="nhanvien.html">QUẢN LÝ NHÂN VIÊN</a></li>
+       <li><a href="donhang.html">QUẢN LÝ ĐƠN HÀNG</a></li>
+      <li><a href="dangxuat.html">ĐĂNG XUẤT</a> 
     </ul>
-  </div>
+    <p>&nbsp;</p>
+    <!-- end .sidebar1 --></div>
   <div class="content">
-    <h1>TRANG CHỦ</h1>
-    <h2>QUẢN LÝ BÀI ĐĂNG TRANG CHỦ</h2>
-    <table>
-    <tr>
-    	<td>Hình ành: </td>
-        <td><label for="file">Chọn Hình Ảnh:</label>
-		<input type="file" name="file1"/>
-		<input type="submit" value="Gửi!"/></td>
-    </tr>
-    <tr>
-    	<td>Bài Đăng: </td>
-        <td><textarea name="txtdc" style="height:200px; width:700px">Văn Phòng Phẩm Deli là một trong những nhà cung cấp lớn dạo trở lại đây
+    <h1>THÊM NHÂN VIÊN MỚI</h1>
+    
+    <a href="nhanvien.html">QUAY VỀ</a>
+    <br />
+    
+    
+   <form action="themnhanvien.html" name="themnhanvien" method="post" onSubmit="return kiemtra()">
+<table border="0" align="center" width="500">
+	<tr>
+			<td width="150">HỌ TÊN:</td>
+			<td width="350"><input type="text" name="txthoten" value="" > </td>
+	</tr>
 
-Những ai thường dùng văn phòng phẩm chắc hẳn đã biết đến chất lượng của thương hiệu Deli. Văn phòng phẩm Deli là một trong những nhà sản xuất văn phòng phẩm chất lượng cao, giá tốt nhất, hàng năm cung cấp một lượng hàng lớn cho thị trường Việt Nam. Tập đoàn Deli là nhà sản xuất văn phòng phẩm ở Trung Quốc. Công ty có 2 viện nghiên cứu, 5 khu công nghiệp lớn, 12 công ty con, hơn 60 chi nhánh và văn phòng đại diện. Với nhiều năm hoạt động công ty không ngừng cải tiến chất lượng và đã mẫu mã mới đến với người tiêu dùng..
+	<tr>
+		<td>TUỔI:</td>
+		<td><input type="text" size=20 value="" name="txttu"></td>
+	</tr>
 
-Hiện trạng thị trường hiện nay cho thấy, sản phẩm rời khỏi tay nhà sản xuất thì giá bán là chuyện …hên xui. Các nhà phân phối phá giá niêm yết hoặc đẩy giá cao lên làm mờ mắt người tiêu dùng. Ngoài ra, khách hàng không kiểm tra sản phẩm chính hãng còn rơi vào trường hợp mua phải hàng giá rẻ, chất lượng kém. Vì vậy giá cả của nhà cung cấp là một yếu tố rất quan trọng khi lựa chọn nhà cung cấp văn phòng phẩm Deli. Văn phòng phẩm HTP Toàn Cầu là nhà phân phối chính hãng văn phòng phẩm Deli tại Hà Nội. Với nhiều năm hợp tác với thương hiệu Deli chúng tôi luôn tuân thủ các yêu cầu về giá của hãng. Tiêu chí của chúng tôi là kinh doanh lâu bền nên tất cả sản phẩm của chúng tôi đều là sản phẩm chính hãng và giá cả tốt. Để hợp tác với chúng tôi bạn có thể liên hệ qua 0243.797.0592 hoặc 0984 907 850 để tìm hiểu về chính sách và nhận báo giá văn phòng phẩm Deli. Văn phòng phẩm HTP Toàn Cầu hy vọng sẽ đem đến sự hài lòng nhất cho khách hàng.</textarea></td>
-    </tr>
+	
+	<tr>
+		<td >GIỚI TÍNH:</td>
+		<td ><select name="rdgt" size="1">
+		<option value="0">Nam
+		<option value="1">Nữ
+		</select></td>
+	</tr>
+    
+    	<tr>
+		<td>SĐT:</td>
+		<td><input type=text name="txtsdt" size=20 value="" ></td>
+	</tr>
+    
+    	<tr>
+		<td>ĐỊA CHỈ:</td>
+		<td><input type=text name="txtdc" size=20 value="" ></td>
+	</tr>
+    
     <tr>
-    	<td></td>
-        <td><input type="button" value="Lưu" /></td>
-    </tr>
-    </table>
-   
-   
-   
-   
-   
-   
-   
-   
-  <!-- end .content --></div>
-  <div class="footer">
-    <p>This .footer contains the declaration position:relative; to give Internet Explorer 6 hasLayout for the .footer and cause it to clear correctly. If you're not required to support IE6, you may remove it.</p>
+		<td>HỆ SỐ LƯƠNG:</td>
+		<td><input type=text name="txths" size=20 value="" ></td>
+	</tr>
+
+
+
+
+	
+
+
+
+<tr>
+<td></td>
+<td ><input type=submit value="Lưu" ><a href="nhanvien.html"><Input type=button value="Hủy"/></a></td>
+</tr>
+</table></form>
+
+    
+    
+    <h3>&nbsp;</h3>
+    <!-- end .content --></div>
+  <div class="footer" align="center">
+    <p>TRANG QUẢN TRỊ - BÁO CÁO THIẾT KẾ WEBSITE<br/>CỬA HÀNG VĂN PHÒNG PHẨM NGUYỆT VY</p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
-  </form>
 </body>
 </html>

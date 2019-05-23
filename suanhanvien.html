@@ -133,12 +133,126 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
 </style>
 <![endif]-->
-<script  language="javascript" type="text/javascript">
+
+
+
+<script type="text/jscript" language="javascript">
+
+function getDateTime() {
+	
+       
+    var now     = new Date(); 
+    var year    = now.getFullYear();
+    var month   = now.getMonth()+1; 
+    var day     = now.getDate();
+    var hour    = now.getHours();
+    var minute  = now.getMinutes();
+    var second  = now.getSeconds(); 
+    if(month.toString().length == 1) {
+         month = '0'+month;
+    }
+    if(day.toString().length == 1) {
+         day = '0'+day;
+    }   
+    if(hour.toString().length == 1) {
+         hour = '0'+hour;
+    }
+    if(minute.toString().length == 1) {
+         minute = '0'+minute;
+    }
+    if(second.toString().length == 1) {
+         second = '0'+second;
+    }   
+    var dateTime = year+'/'+month+'/'+day+' '+hour+':'+minute+':'+second;   
+     
+     document.write("Thời gian: "+day+'/'+month+'/'+year+' '+hour+':'+minute+':'+second);
+           
+  }
+
+
+
+
+
+
+
+
+function kiemtra(){
+		var ht=window.document.dangky.txthoten.value;
+		var dn=window.document.dangky.txtUsernameHDuy.value;
+		var mk=window.document.dangky.txtPasswordHDuy.value;
+		var nlmk=window.document.dangky.txtnlPasswordHDuy.value;
+		var gt=window.document.dangky.rdgt.value;
+
+		var na=window.document.dangky.txtnam.value;
+		var dc=window.document.dangky.txtdc.value;
+
+
+if(ht.length==0){
+alert("vui lòng nhập họ tên");
+window.document.dangky.txthoten.focus();
+return false;
+}
+if(na.length==0){
+alert("vui lòng điền năm sinh"); window.document.dangky.nam.focus();
+return false;
+}
+if(isNaN(na)==true){
+alert("Day khong phai la so");
+window.document.dangky.nam.value="";
+document.dangky.nam.focus();
+return false;
+}
+if(na<2001){
+alert("bạn chưa đủ tuổi đăng ký");
+window.document.dangky.txtnam.value="";
+document.dangky.txtnam.focus();
+return false;
+}
+
+if(dn.length==0){
+alert("hãy điền tên đăng nhập");
+window.document.dangky.txtUsernameHDuy.focus();
+return false;
+}
+if(mk.length==0){
+alert("hãy nhập mật khẩu");
+window.document.dangky.txtPasswordHDuy.focus();
+return false;
+}
+if(nlmk.length==0) {
+alert("hãy nhập lại mật khẩu");
+window.document.dangky.txtnlPasswordHDuy.focus();
+return false;
+}
+if(mk != nlmk){
+alert("mật khẩu và nhập lại mật khẩu ko trùng nhau");
+window.document.dangky.txtnlPasswordHDuy.focus();
+return false;
+}
+alert("Đăng ký thành công! Chúc mừng bạn");
+return true;
+}
+
+
+
+
+
+
 	
 function show(value){
 			alert(value + " thành công");
 		}
+
+
+
+
 </script>
+
+
+
+
+
+
 
 </head>
 
@@ -149,50 +263,77 @@ function show(value){
   <!-- end .header --></div>
   <div class="sidebar1">
     <ul class="nav">
-           <li><a href="index.html">TRANG CHỦ</a></li>
+       <li><a href="index.html">TRANG CHỦ</a></li>
       <li><a href="sanpham.html">QUẢN LÝ SÁN PHẨM</a></li>
       <li><a href="khachhang.html">QUẢN LÝ KHÁCH HÀNG</a></li>
       <li><a href="nhanvien.html">QUẢN LÝ NHÂN VIÊN</a></li>
        <li><a href="donhang.html">QUẢN LÝ ĐƠN HÀNG</a></li>
-      <li><a href="dangxuat.html">ĐĂNG XUẤT</a>   
+      <li><a href="dangxuat.html">ĐĂNG XUẤT</a> 
     </ul>
-    
+    <p>&nbsp;</p>
     <!-- end .sidebar1 --></div>
-  <div class="content">
-    <h1>QUẢN LÝ THÔNG TIN KHÁCH HÀNG</h1>
-    <p><a href="dangkykhachhang.html">THÊM KHÁCH HÀNG MỚI</a>     </p>
-     <form action="khachhang.html" name="khachhang" method="post" onSubmit="return show()"> 
-    <table width="624" border="1" align="center">
-      <tr>
-    <td width="30">STT</td>
-    <td width="104" >TÊN KHÁCH HÀNG</td>
-    <td width="97" >TÀI KHOẢN</td>
-    <td width="72" >MẬT KHẨU</td>
-    <td width="65" >GIỚI TÍNH</td>
-    <td width="94" >NGÀY SINH</td>
-    <td width="94" >ĐỊA CHỈ</td>
-    <td width="94" >SỞ THÍCH</td>
-    <td width="116" >THAO TÁC</td>
-      </tr>
-  <tr>
-    <td>1</td>
-    <td>KHÁCH HÀNG 1</td>
-    <td>khachhang1</td>
-    <td>******</td>
-    <td>Nam</td>
-    <td>27/05/1997</td>
-    <td>15 Bình Dương</td>
-    <td>Không</td>
-   
-    <td><a href="chitietkhachhang.html" ><input type="button" value="Chi tiết khách hàng" class="button"></a>
-    <a href="suakhachhang.html" ><input type="button" value="Sửa" class="button"></a>
- <input type="button" name="button1" value="Xóa" size="20" onclick="show(this.form.button1.value)"></td>
-  </tr>
- 
-</table>
+    
+    <nav >
+	
 
-</form>
+    
+    
+  <div class="content">
+    <h2>CHỈNH SỬA THÔNG TIN NHÂN VIÊN</h2>
+    <a href="nhanvien.html">QUAY VỀ</a>
+    <br />
+    <br />
+    <form action="dangky.html" name="dangky" method="post" onSubmit="return kiemtra()">
+<table border="0" align="center" width="500">
+	<tr>
+			<td width="150">HỌ TÊN:</td>
+			<td width="350"><input type="text" name="txthoten" value="Nguyễn Văn A" > </td>
+	</tr>
+
+	<tr>
+		<td>TUỔI:</td>
+		<td><input type=text name=txtUsernameHDuy size=20 value="23"></td>
+	</tr>
+
+	
+	<tr>
+		<td >GIỚI TÍNH:</td>
+		<td ><select name="rdgt" size="1">
+		<option value="0">Nam
+		<option value="1">Nữ
+		</select></td>
+	</tr>
+    
+    	<tr>
+		<td>SĐT:</td>
+		<td><input type=text name="txtPasswordHDuy" size=20 value="0123456789" ></td>
+	</tr>
+    
+    	<tr>
+		<td>ĐỊA CHỈ:</td>
+		<td><input type=text name="txtPasswordHDuy" size=20 value="15 Thuận An" ></td>
+	</tr>
+
+
+
+
+	
+
+
+
+<tr>
+<td></td>
+<td ><input type="button" name="button1" value="Lưu" size="20" onclick="show(this.form.button1.value)"><a href="nhanvien.html"><Input type=button value="Hủy"/></a></td>
+</tr>
+</table></form>
+    
+    
+    
+    
+   
+    
     <!-- end .content --></div>
+    </nav>
   <div class="footer" align="center">
     <p>TRANG QUẢN TRỊ - BÁO CÁO THIẾT KẾ WEBSITE<br/>CỬA HÀNG VĂN PHÒNG PHẨM NGUYỆT VY</p>
     <!-- end .footer --></div>

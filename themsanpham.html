@@ -99,8 +99,8 @@ ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your li
 	color: #000;
 }
 ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
-	background-color: #6F7D94;
-	color: #FFF;
+	background-color: #CCFF00;
+	color: #000;
 }
 
 /* ~~ The footer ~~ */
@@ -134,60 +134,64 @@ ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it ne
 </style>
 <![endif]-->
 
-<script language="javascript">function kiemtra1(){
-		var ht=window.document.dangky.txthoten.value;
-		var dn=window.document.dangky.txtUsernameHDuy.value;
-		var mk=window.document.dangky.txtPasswordHDuy.value;
-		var nlmk=window.document.dangky.txtnlPasswordHDuy.value;
-		var gt=window.document.dangky.rdgt.value;
+<script language="javascript" type="text/javascript">function kiemtra(){
+	
+		var tsp=window.document.themsanpham.txttsp.value;
+		var cty=window.document.themsanpham.txtcty.value;
+		var diaban=window.document.themsanpham.txtdiaban.value;
+		var banquyen=window.document.themsanpham.txtbanquyen.value;
+		var gd=window.document.themsanpham.txtgd.value;
+		var nsx=window.document.themsanpham.txtnsx.value;
+		var ht=window.document.themsanpham.txtht.value;
+		var gb=window.document.themsanpham.txtgb.value;
+		//var nd=window.document.themsanpham.txtnd.value;
+		
+	
 
-		var na=window.document.dangky.txtnam.value;
-		var dc=window.document.dangky.txtdc.value;
 
-
+if(tsp.length==0){
+alert("vui lòng nhập tên sản phẩm");
+window.document.themsanpham.txttsp.focus();
+return false;
+}
+if(cty.length==0){
+alert("vui lòng nhập tên công ty");
+window.document.themsanpham.txtcty.focus();
+return false;
+}
+if(diaban.length==0){
+alert("vui lòng nhập tên địa bàn");
+window.document.themsanpham.txtdiaban.focus();
+return false;
+}
+if(banquyen.length==0){
+alert("vui lòng nhập bản quyền sách");
+window.document.themsanpham.txtbanquyen.focus();
+return false;
+}
+if(gd.length==0){
+alert("vui lòng nhập tên giám đốc");
+window.document.themsanpham.txtgd.focus();
+return false;
+}
+if(nsx.length==0){
+alert("vui lòng nhập nơi sản xuất");
+window.document.themsanpham.txtnsx.focus();
+return false;
+}
 if(ht.length==0){
-alert("vui lòng nhập họ tên");
-window.document.dangky.txthoten.focus();
+alert("vui lòng nhập hợp tác");
+window.document.themsanpham.txtht.focus();
 return false;
 }
-if(na.length==0){
-alert("vui lòng điền năm sinh"); window.document.dangky.nam.focus();
-return false;
-}
-if(isNaN(na)==true){
-alert("Day khong phai la so");
-window.document.dangky.nam.value="";
-document.dangky.nam.focus();
-return false;
-}
-if(na<2001){
-alert("bạn chưa đủ tuổi đăng ký");
-window.document.dangky.txtnam.value="";
-document.dangky.txtnam.focus();
+if(gb.length==0){
+alert("vui lòng nhập giá bán");
+window.document.themsanpham.txtgb.focus();
 return false;
 }
 
-if(dn.length==0){
-alert("hãy điền tên đăng nhập");
-window.document.dangky.txtUsernameHDuy.focus();
-return false;
-}
-if(mk.length==0){
-alert("hãy nhập mật khẩu");
-window.document.dangky.txtPasswordHDuy.focus();
-return false;
-}
-if(nlmk.length==0) {
-alert("hãy nhập lại mật khẩu");
-window.document.dangky.txtnlPasswordHDuy.focus();
-return false;
-}
-if(mk != nlmk){
-alert("mật khẩu và nhập lại mật khẩu ko trùng nhau");
-window.document.dangky.txtnlPasswordHDuy.focus();
-return false;
-}
-alert("Đăng ký thành công! Chúc mừng bạn");
+
+alert("Thêm sản phẩm mới thành công");
 return true;
 }
 
@@ -200,15 +204,16 @@ return true;
 <body>
 
 <div class="container">
-  <div class="header"><img src="img/banner4.jpg" width="1029" height="361" alt="" longdesc="trangchu.html" />
+  <div class="header" align="center"><img src="img/banner4.jpg" width="1029" height="361" alt="" longdesc="index.html" />
   <!-- end .header --></div>
   <div class="sidebar1">
     <ul class="nav">
-       <li><a href="trangchu.html">TRANG CHỦ</a></li>
+       <li><a href="index.html">TRANG CHỦ</a></li>
       <li><a href="sanpham.html">QUẢN LÝ SÁN PHẨM</a></li>
       <li><a href="khachhang.html">QUẢN LÝ KHÁCH HÀNG</a></li>
-      <li><a href="#">QUẢN LÝ NHÂN VIÊN</a></li>
-      <li><a href="#">Link four</a></li>
+      <li><a href="nhanvien.html">QUẢN LÝ NHÂN VIÊN</a></li>
+       <li><a href="donhang.html">QUẢN LÝ ĐƠN HÀNG</a></li>
+      <li><a href="dangxuat.html">ĐĂNG XUẤT</a> 
     </ul>
     <p>&nbsp;</p>
     <!-- end .sidebar1 --></div>
@@ -223,53 +228,53 @@ return true;
 <table border="0" align="center" width="500">
 	<tr>
 			<td width="150">Tên sản phẩm:</td>
-			<td width="350"><input type="text" name="txthoten" > </td>
+			<td width="350"><input type="text" name="txttsp" > </td>
 	</tr>
 
 	<tr>
 		<td>Công ty:</td>
-		<td><input type=text name=txtUsernameHDuy size=20></td>
+		<td><input type=text name="txtcty" size=20></td>
 	</tr>
 
 	<tr>
 		<td>Địa bàn:</td>
-		<td><input type=password name="txtPasswordHDuy" size=20 ></td>
+		<td><input type=text name="txtdiaban" size=20 ></td>
 	</tr>
     
     <tr>
 		<td>Bản quyền:</td>
-		<td><input type=password name="txtPasswordHDuy" size=20 ></td>
+		<td><input type=text name="txtbanquyen" size=20 ></td>
 	</tr>
 	
     <tr>
 		<td>Giám đốc:</td>
-		<td><input type=password name="txtPasswordHDuy" size=20 ></td>
+		<td><input type=text name="txtgd" size=20 ></td>
 	</tr>
     
     <tr>
 		<td>Nơi sản xuất:</td>
-		<td><input type=password name="txtPasswordHDuy" size=20 ></td>
+		<td><input type=text name="txtnsx" size=20 ></td>
 	</tr>
     
     <tr>
 		<td>Hợp tác:</td>
-		<td><input type=password name="txtPasswordHDuy" size=20 ></td>
+		<td><input type=text name="txtht" size=20 ></td>
 	</tr>
     
     <tr>
 		<td>Giá bán:</td>
-		<td><input type=password name="txtPasswordHDuy" size=20 ></td>
+		<td><input type=text name="txtgb" size=20 ></td>
 	</tr>
     
     <tr>
 		<td>Nội dung:</td>
-		<td><textarea name="txtdc"></textarea></td>
+		<td><textarea name="txtnd"></textarea></td>
 	</tr>
 
 
 <tr>
 <td></td>
-<td ><input type=submit value="Lưu" ><Input type=reset value="Hủy"/></td>
+<td ><input type=submit value="Lưu" ><a href="sanpham.html"><Input type=button value="Hủy"/></a></td>
 </tr>
 </table></form>
 
@@ -277,8 +282,8 @@ return true;
     
     <h3>&nbsp;</h3>
     <!-- end .content --></div>
-  <div class="footer">
-    <p>This .footer contains the declaration position:relative; to give Internet Explorer 6 hasLayout for the .footer and cause it to clear correctly. If you're not required to support IE6, you may remove it.</p>
+  <div class="footer" align="center">
+    <p>TRANG QUẢN TRỊ - BÁO CÁO THIẾT KẾ WEBSITE<br/>CỬA HÀNG VĂN PHÒNG PHẨM NGUYỆT VY</p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
 </body>

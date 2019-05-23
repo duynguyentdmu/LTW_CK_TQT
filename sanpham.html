@@ -99,8 +99,8 @@ ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your li
 	color: #000;
 }
 ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
-	background-color: #6F7D94;
-	color: #FFF;
+	background-color: #CCFF00;
+	color: #000;
 }
 
 /* ~~ The footer ~~ */
@@ -132,29 +132,38 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 .content { margin-right: -1px; } /* this 1px negative margin can be placed on any of the columns in this layout with the same corrective effect. */
 ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
 </style>
-<![endif]--></head>
+<![endif]-->
+<script  language="javascript" type="text/javascript">
+	
+function show(value){
+			alert(value + " thành công");
+		}
+</script>
+
+</head>
 
 <body>
 
 <div class="container">
-  <div class="header"><img src="img/banner4.jpg" width="1029" height="361" alt="" longdesc="trangchu.html" />
+  <div class="header" align="center"><img src="img/banner4.jpg" width="1029" height="361" alt="" longdesc="index.html" />
   <!-- end .header --></div>
   <div class="sidebar1">
     <ul class="nav">
-       <li><a href="trangchu.html">TRANG CHỦ</a></li>
+       <li><a href="index.html">TRANG CHỦ</a></li>
       <li><a href="sanpham.html">QUẢN LÝ SÁN PHẨM</a></li>
       <li><a href="khachhang.html">QUẢN LÝ KHÁCH HÀNG</a></li>
-      <li><a href="#">QUẢN LÝ NHÂN VIÊN</a></li>
-      <li><a href="#">Link four</a></li>
+      <li><a href="nhanvien.html">QUẢN LÝ NHÂN VIÊN</a></li>
+       <li><a href="donhang.html">QUẢN LÝ ĐƠN HÀNG</a></li>
+      <li><a href="dangxuat.html">ĐĂNG XUẤT</a> 
     </ul>
-    <p>&nbsp;</p>
+   
     <!-- end .sidebar1 --></div>
   <div class="content">
     <h1>QUẢN LÝ THÔNG TIN SẢN PHẨM</h1>
     
     <a href="themsanpham.html">THÊM SẢN PHẨM MỚI <br /></a>
     <br />
-    
+    <form action="sanpham.html" name="sanpham" method="post" onSubmit="return show()"> 
     
    <table width="609" border="1">
   <tr>
@@ -185,17 +194,17 @@ ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it ne
    
     <td><a href="chitietsanpham.html" ><input type="button" value="Chi tiết" class="button"></a>
     <a href="suasanpham.html" ><input type="button" value="Sửa" class="button"></a>
- <input type="button" value="Xóa" class="button"></td>
+ <input type="button" name="button1" value="Xóa" size="20" onclick="show(this.form.button1.value)"></td>
   </tr>
  
 </table>
 
+    </form>
     
-    
-    <h3>&nbsp;</h3>
+  
     <!-- end .content --></div>
-  <div class="footer">
-    <p>This .footer contains the declaration position:relative; to give Internet Explorer 6 hasLayout for the .footer and cause it to clear correctly. If you're not required to support IE6, you may remove it.</p>
+  <div class="footer" align="center">
+    <p>TRANG QUẢN TRỊ - BÁO CÁO THIẾT KẾ WEBSITE<br/>CỬA HÀNG VĂN PHÒNG PHẨM NGUYỆT VY</p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
 </body>

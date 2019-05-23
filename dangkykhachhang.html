@@ -99,8 +99,8 @@ ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your li
 	color: #000;
 }
 ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
-	background-color: #6F7D94;
-	color: #FFF;
+	background-color: #CCFF00;
+	color: #000;
 }
 
 /* ~~ The footer ~~ */
@@ -177,58 +177,61 @@ function getDateTime() {
 
 
 function kiemtra(){
-		var ht=window.document.dangky.txthoten.value;
-		var dn=window.document.dangky.txtUsernameHDuy.value;
-		var mk=window.document.dangky.txtPasswordHDuy.value;
-		var nlmk=window.document.dangky.txtnlPasswordHDuy.value;
-		var gt=window.document.dangky.rdgt.value;
+		var ht=window.document.dangkykhachhang.txthoten.value;
+		var tk=window.document.dangkykhachhang.txttk.value;
+		var mk=window.document.dangkykhachhang.txtmk.value;
+		var nlmk=window.document.dangkykhachhang.txtnlmk.value;
+		//var gt=window.document.dangkykhachhang.rdgt.value;
 
-		var na=window.document.dangky.txtnam.value;
-		var dc=window.document.dangky.txtdc.value;
+		var na=window.document.dangkykhachhang.txtnam.value;
+		var dc=window.document.dangkykhachhang.txtdc.value;
 
 
 if(ht.length==0){
 alert("vui lòng nhập họ tên");
-window.document.dangky.txthoten.focus();
+window.document.dangkykhachhang.txthoten.focus();
 return false;
 }
-if(na.length==0){
-alert("vui lòng điền năm sinh"); window.document.dangky.nam.focus();
-return false;
-}
-if(isNaN(na)==true){
-alert("Day khong phai la so");
-window.document.dangky.nam.value="";
-document.dangky.nam.focus();
-return false;
-}
-if(na<2001){
-alert("bạn chưa đủ tuổi đăng ký");
-window.document.dangky.txtnam.value="";
-document.dangky.txtnam.focus();
+if(tk.length==0){
+alert("vui lòng nhập tài khoản"); window.document.dangkykhachhang.txttk.focus();
 return false;
 }
 
-if(dn.length==0){
-alert("hãy điền tên đăng nhập");
-window.document.dangky.txtUsernameHDuy.focus();
+if(isNaN(na)==true){
+alert("Day khong phai la so");
+window.document.dangkykhachhang.nam.value="";
+document.dangkykhachhang.txtnam.focus();
 return false;
 }
+/*
+if(na<2001){
+alert("bạn chưa đủ tuổi đăng ký");
+window.document.dangkykhachhang.nam.value="";
+document.dangkykhachhang.txtnam.focus();
+return false;
+}*/
+
 if(mk.length==0){
 alert("hãy nhập mật khẩu");
-window.document.dangky.txtPasswordHDuy.focus();
+window.document.dangkykhachhang.txtmk.focus();
 return false;
 }
 if(nlmk.length==0) {
 alert("hãy nhập lại mật khẩu");
-window.document.dangky.txtnlPasswordHDuy.focus();
+window.document.dangkykhachhang.txtnlmk.focus();
 return false;
 }
 if(mk != nlmk){
 alert("mật khẩu và nhập lại mật khẩu ko trùng nhau");
-window.document.dangky.txtnlPasswordHDuy.focus();
+window.document.dangkykhachhang.txtnlmk.focus();
 return false;
 }
+/*
+if(dc.length==0){
+alert("vui lòng nhập địa chỉ");
+window.document.dangkykhachhang.txtdc.focus();
+return false;
+}*/
 alert("Đăng ký thành công! Chúc mừng bạn");
 return true;
 }
@@ -253,15 +256,16 @@ return true;
 <body>
 
 <div class="container">
-  <div class="header"><img src="img/banner4.jpg" width="1029" height="361" alt="" longdesc="trangchu.html" />
+  <div class="header" align="center"><img src="img/banner4.jpg" width="1029" height="361" alt="" longdesc="index.html" />
   <!-- end .header --></div>
   <div class="sidebar1">
     <ul class="nav">
-    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+     <li><a href="index.html">TRANG CHỦ</a></li>
       <li><a href="sanpham.html">QUẢN LÝ SÁN PHẨM</a></li>
       <li><a href="khachhang.html">QUẢN LÝ KHÁCH HÀNG</a></li>
-      <li><a href="#">QUẢN LÝ NHÂN VIÊN</a></li>
-      <li><a href="#">Link four</a></li>
+      <li><a href="nhanvien.html">QUẢN LÝ NHÂN VIÊN</a></li>
+       <li><a href="donhang.html">QUẢN LÝ ĐƠN HÀNG</a></li>
+      <li><a href="dangxuat.html">ĐĂNG XUẤT</a> 
     </ul>
     <p>&nbsp;</p>
     <!-- end .sidebar1 --></div>
@@ -278,7 +282,7 @@ return true;
     <br />
     
 
-<form action="dangky.html" name="dangky" method="post" onSubmit="return kiemtra()">
+<form action="dangkykhachhang.html" name="dangkykhachhang" method="post" onSubmit="return kiemtra()">
 <table border="0" align="center" width="500">
 	<tr>
 			<td width="150">Họ tên KH:</td>
@@ -287,18 +291,18 @@ return true;
 
 	<tr>
 		<td>Tài khoản:</td>
-		<td><input type=text name=txtUsernameHDuy size=20></td>
+		<td><input type=text name="txttk" size=20></td>
 	</tr>
 
 	<tr>
 		<td>Mật khẩu:</td>
-		<td><input type=password name="txtPasswordHDuy" size=20 ></td>
+		<td><input type=password name="txtmk" size=20 ></td>
 	</tr>
 
 
 	<tr>
 		<td>Nhập lại mật khẩu:</td>
-		<td><input type=password name="txtnlPasswordHDuy" size=20 ></td>
+		<td><input type=password name="txtnlmk" size=20 ></td>
 	</tr>
 
 
@@ -388,8 +392,8 @@ return true;
     <p>&nbsp;</p>
     <!-- end .content --></div>
     </nav>
-  <div class="footer">
-    <p>This .footer contains the declaration position:relative; to give Internet Explorer 6 hasLayout for the .footer and cause it to clear correctly. If you're not required to support IE6, you may remove it.</p>
+  <div class="footer" align="center">
+    <p>TRANG QUẢN TRỊ - BÁO CÁO THIẾT KẾ WEBSITE<br/>CỬA HÀNG VĂN PHÒNG PHẨM NGUYỆT VY</p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
 </body>
